@@ -1,210 +1,267 @@
-# 🚀 Init Next.js App — Saku Muslim
+# 🌙 Saku Muslim — Modern Islamic Companion PWA
 
-Selamat datang di **Saku Muslim**, template Next.js 16 modern berbasis **React 19**, **Tailwind CSS v4.3**, dan **TypeScript 6 (Strict Mode)** dengan dukungan Progressive Web App (PWA) serta integrasi i18n native berbasis cookie tanpa URL prefix.
+Selamat datang di **Saku Muslim**, aplikasi pendamping ibadah Muslim modern yang komprehensif, cepat, responsif, dan *offline-first*. Dibangun di atas fondasi **Next.js 16 (App Router)**, **React 19**, **Tailwind CSS v4**, dan **TypeScript 6 (Strict Mode)**, serta dilengkapi dengan kapabilitas **Progressive Web App (PWA)** berbasis Serwist.
 
-Repositori ini dioptimalkan secara mendalam menggunakan **Bun** sebagai pengelola paket, konfigurasi **ESLint v9**, serta dilengkapi dengan **ID Security Suite** bawaan untuk pengamanan identitas data Anda.
+Saku Muslim dirancang untuk memberikan kemudahan dan kenyamanan dalam menjalankan ibadah harian umat Islam di mana saja, kapan saja, baik melalui perangkat mobile maupun desktop.
 
 ---
 
-## 📊 Arsitektur Pengamanan ID (ID Security Suite)
+## 🌟 Fitur Utama
 
-Berikut adalah visualisasi alur pemrosesan data pada dua fitur keamanan utama (Sqids & AES-256-GCM) yang terintegrasi di dalam template ini:
+### 1. 🕋 Jadwal Sholat Presisi & Waktu Imsakiyah
+- **Hisab Astronomis Akurat**: Perhitungan hisab waktu sholat fardhu (Subuh, Terbit, Dzuhur, Ashar, Maghrib, Isya) berdasarkan koordinat lintang & bujur kota di Indonesia serta dukungan geolokasi.
+- **Hitung Mundur Sholat (Live Countdown)**: Countdown waktu nyata per detik menuju waktu sholat berikutnya.
+- **Pelacak Sholat Fardhu Harian (5 Waktu)**: Checklist sholat harian mandiri yang tersimpan di penyimpanan lokal (*localStorage*) dengan sinkronisasi zona waktu yang aman.
+- **Audio Adzan**: Pemutar audio adzan interaktif untuk pratinjau lantunan azan merdu.
+
+### 2. 📖 Al-Qur'an Digital 30 Juz (114 Surah)
+- **Direktori Surah Lengkap**: Daftar 114 surah dengan informasi nomor, tempat turun (Makkiyah/Madaniyah), jumlah ayat, serta pencarian instan (nama Latin, arti, atau nomor surah).
+- **Pembaca Surah Per Ayat**: Tipografi huruf Arab Uthmani yang nyaman dibaca, transliterasi Latin, dan terjemahan Bahasa Indonesia.
+- **Murottal Audio Per Ayat**: Putar audio qari internasional (Syeikh Mishary Rashid Alafasy) langsung per ayat dengan *floating audio player* terintegrasi.
+- **Salin Ayat & Navigasi Cepat**: Kemudahan menyalin teks ayat beserta terjemahan ke papan klip (*clipboard*).
+
+### 3. 🧭 Kompas Arah Kiblat Interaktif
+- **Kalkulasi Akurat ke Ka'bah**: Perhitungan sudut arah kiblat (azimut) real-time dari posisi pengguna menuju Ka'bah di Mekkah Al-Mukarramah.
+- **Kompas Visual 360°**: Indikator jarum kompas responsif dengan derajat arah yang jelas.
+- **Dukungan Sensor Perangkat**: Mendukung sensor giroskop/orientasi perangkat pada peramban mobile (termasuk penanganan izin `DeviceOrientation` pada iOS 13+).
+- **Pemilih Kota Alternatif**: Memungkinkan pemilihan kota secara manual jika izin lokasi tidak diaktifkan.
+
+### 4. 📿 Kumpulan Doa, Dzikir & Tasbih Digital
+- **Doa & Dzikir Harian**: Koleksi doa sehari-hari, Dzikir Pagi & Petang, serta Dzikir Setelah Sholat lengkap dengan teks Arab, transliterasi Latin, arti, dan faedahnya.
+- **Tasbih Digital**: Penghitung zikir digital interaktif dengan target putaran (33, 99, atau tanpa batas), getaran haptik (*haptic feedback*), efek suara klik lembut berbasis *singleton AudioContext* hemat memori, dan tombol reset.
+
+### 5. ✨ 99 Asmaul Husna
+- **Daftar Lengkap Nama-Nama Mulia Allah**: Tampilan 99 Asmaul Husna dengan lafal Arab, transliterasi, dan makna mendalam.
+- **Pencarian Cepat**: Filter instan berdasarkan nama Arab, Latin, atau artinya.
+- **Modal Dialog Detail Aksesibel**: Kartu detail interaktif yang ramah aksesibilitas (standar dialog WCAG, penutupan via tombol keyboard `Escape`).
+
+### 6. 💰 Kalkulator Zakat Komprehensif
+- **Zakat Profesi / Penghasilan**: Perhitungan zakat penghasilan bulanan/tahunan berdasarkan nisab setara 85 gram emas.
+- **Zakat Maal (Harta Kekayaan)**: Perhitungan zakat tabungan, deposito, dan aset lancar yang telah mencapai haul 1 tahun dan nisab emas.
+- **Zakat Emas & Perak**: Perhitungan kepemilikan logam mulia dengan ambang batas nisab syariah (85g emas / 595g perak).
+- **Zakat Fitrah**: Kalkulator kewajiban zakat fitrah berdasarkan jumlah tanggungan jiwa dan harga beras per jiwa (2.5 kg).
+- **Sanitasi Angka Dinamis**: Input numerik terlindungi dari nilai `NaN` atau angka negatif, diformat otomatis dalam standar mata uang Rupiah (`Rp`).
+
+### 7. 📅 Kalender Hijriah & Pengingat Puasa Sunnah
+- **Sinkronisasi Penanggalan**: Kalender Masehi terintegrasi dengan penanggalan Hijriah.
+- **Jadwal Puasa Sunnah**: Penandaan visual otomatis untuk puasa Ayyamul Bidh, Senin & Kamis, serta puasa sunnah utama lainnya.
+- **Katalog Hari Besar Islam**: Daftar peringatan momentum bersejarah Islam (Tahun Baru Hijriah, Maulid Nabi, Isra Mi'raj, Nuzulul Qur'an, Idul Fitri, Idul Adha).
+
+### 8. 🌙 Nuansa & Fitur Spesial Bulan Ramadhan (Kondisional)
+- **Aktivasi Otomatis & Manual**: Aktif otomatis saat sistem mendeteksi bulan Ramadhan, atau dapat diuji/diaktifkan melalui parameter URL `?ramadhan=true` (dan dinonaktifkan via `?ramadhan=false`).
+- **Desain Tematik Islami**: Ornamen Arabesque khas, lentera Fanous bercahaya lembut (*glowing pulse*), dan lencana keemasan (*Ramadhan Gold Badge*).
+- **Ramadhan Worship Tracker (Mutaba'ah Yaumiyah)**: Checklist 6 amalan harian Ramadhan (Puasa, Tarawih, Tadarus Qur'an, Sedekah, Tahajud, I'tikaf) dengan indikator persentase progres harian.
+- **Ramadhan Du'a Suite**: Kumpulan doa khusus Ramadhan (Doa Hari ke-1 s/d 30, Doa Menyambut Ramadhan, Niat Puasa & Buka Puasa, serta Doa 10 Malam Terakhir & Lailatul Qadar) lengkap dengan tombol audio.
+
+---
+
+## 🏗️ Arsitektur Sistem
+
+Diagram berikut menggambarkan arsitektur data dan alur modul pada aplikasi **Saku Muslim**:
 
 ```mermaid
-graph TD
-    Input[("Input ID / Teks")] --> Decision{"Pilih Metode Keamanan"}
+flowchart TD
+    User["Peramban Klien (Mobile / Desktop PWA)"] --> Routing["Next.js 16 App Router (Server & Client Components)"]
     
-    %% Obfuscation Path (Sqids)
-    Decision -- "Penyamaran ID (Sqids)" --> SqidsBlock["lib/obfuscator.ts (Sqids)"]
-    SqidsBlock --> |"Encode (Positive Integer)"| ObfHash["Obfuscated Hash (misal: o7vL39)"]
-    ObfHash --> |"Deobfuscate"| SqidsBlock
-    
-    %% Encryption Path (AES)
-    Decision -- "Enkripsi Kriptografis (AES-256-GCM)" --> ServerAction["app/demo-encryption/actions.ts (use server)"]
-    ServerAction --> |"Membaca ENCRYPTION_KEY"| AESGCM["lib/crypto.ts (AES-256-GCM)"]
-    AESGCM --> |"Encrypt & Sign"| EncToken["Base64 URL-Safe Encrypted Token"]
-    EncToken --> |"Decrypt & Verify"| AESGCM
-    
-    %% UI Presentation
-    ObfHash --> UI["Demo Interface / URL SearchParams"]
-    EncToken --> UI
-    
-    style Decision fill:#1a1a1a,stroke:#333,stroke-width:2px,color:#fff
-    style SqidsBlock fill:#312e81,stroke:#4338ca,color:#fff
-    style AESGCM fill:#064e3b,stroke:#047857,color:#fff
-    style ServerAction fill:#0f172a,stroke:#1e293b,color:#fff
+    subgraph Client_Experience ["Pengalaman Klien & UI Layer"]
+        Routing --> HomeView["Beranda (HomeHero)"]
+        Routing --> QuranView["Al-Qur'an 30 Juz (/quran)"]
+        Routing --> PrayerView["Jadwal Sholat (/jadwal-sholat)"]
+        Routing --> QiblaView["Kompas Kiblat (/kiblat)"]
+        Routing --> DoaView["Doa, Dzikir & Tasbih (/doa-dzikir)"]
+        Routing --> AsmaulView["99 Asmaul Husna (/asmaul-husna)"]
+        Routing --> ZakatView["Kalkulator Zakat (/zakat)"]
+        Routing --> HijriView["Kalender Hijriah (/kalender-hijriah)"]
+    end
+
+    subgraph Core_Engines ["Modul Logika & Kalkulator"]
+        PrayerView --> PrayerCalc["lib/prayer-calculator.ts (Hisab Astronomis)"]
+        QiblaView --> QiblaCalc["Kalkulasi Azimut Ka'bah & Giroskop"]
+        ZakatView --> ZakatCalc["lib/zakat-calculator.ts (Validasi Nisab & Zakat)"]
+        HomeView --> RamadhanEngine["lib/ramadhan.ts (Deteksi Status Ramadhan)"]
+    end
+
+    subgraph Ramadhan_Suite ["Ramadhan Special Suite (Kondisional)"]
+        RamadhanEngine --> RamadhanTracker["Ramadhan Worship Tracker (Mutaba'ah)"]
+        RamadhanEngine --> RamadhanDuas["Ramadhan Du'a Suite (1-30 & Lailatul Qadar)"]
+        RamadhanEngine --> RamadhanDeco["Ornamen Arabesque & Fanous Glow"]
+    end
+
+    subgraph Storage_And_Audio ["Penyimpanan & Layanan Eksternal"]
+        HomeView --> LocalStorage["Local Storage (Daily Prayer & Worship Tracker)"]
+        QuranView --> AudioService["Global Audio Player (Murottal CDN)"]
+        DoaView --> WebAudioAPI["Web Audio API (Haptic & Click Sound)"]
+        Routing --> SerwistPWA["Serwist Service Worker (Offline Cache)"]
+    end
+
+    subgraph Security_Suite ["ID Security & Protection Layer"]
+        Routing --> RateLimiter["lib/rate-limiter.ts (In-memory Rate Limiting)"]
+        Routing --> ProxySecurity["proxy.ts & security-guards.ts (SSRF & Input Guard)"]
+        Routing --> CryptoEngine["lib/crypto.ts (AES-256-GCM) & lib/obfuscator.ts (Sqids)"]
+    end
 ```
 
 ---
 
-## ✨ Fitur Utama
+## 💻 Teknologi & Dependensi Utama
 
-1. **Next.js 16 (App Router)** & **React 19**: Memanfaatkan fitur rendering server terbaru (*Server Components by default*).
-2. **Tailwind CSS v4.3 & Theming**: Styling modern berbasis CSS variables (`@theme inline`) dilengkapi `ThemeSwitcher` (`next-themes`) untuk Dark 🌙, Light ☀️, dan System 💻 mode.
-3. **Serwist PWA v9.5**: Service worker luring (*offline-first*) yang tangguh untuk mendukung Progressive Web Application.
-4. **Cookie-Based Native i18n**: Sistem lokalisasi native berbasis cookie `NEXT_LOCALE` tanpa prefix URL `[lang]`, menjaga URL tetap bersih (`/`, `/demo-encryption`). Mendukung Bahasa Indonesia (default: `id`) dan Inggris (`en`).
-5. **ID Security Suite**:
-   * **Sqids Obfuscation**: Mengubah ID integer database (auto-increment) menjadi hash unik ramah URL untuk menyembunyikan detail sensitif database.
-   * **AES-256-GCM Cryptography**: Enkripsi dua arah terautentikasi (*tamper-proof*) berbasis server untuk menjaga privasi data sensitif seperti UUID atau string transaksi.
-6. **Continuous Integration (CI)**: Pipeline GitHub Actions otomatis untuk mendeteksi error linter dan memverifikasi build aplikasi pada setiap Pull Request ke cabang `master`.
+| Kategori | Teknologi | Deskripsi |
+|---|---|---|
+| **Framework** | [Next.js 16.3.6](https://nextjs.org/) | App Router, React Server Components (RSC), Metadata API |
+| **UI Library** | [React 19.3.0](https://react.dev/) | React terbaru dengan arsitektur aksi server dan hooks modern |
+| **Language** | [TypeScript 6.0.3](https://www.typescriptlang.org/) | Strict Type Safety, tanpa `any` liar |
+| **Styling** | [Tailwind CSS v4.3.3](https://tailwindcss.com/) | CSS Variables `@theme inline`, dark mode class-based, ultra-fast engine |
+| **PWA** | [Serwist v9.5.13](https://serwist.pages.dev/) | Service Worker modern untuk Next.js dengan dukungan cache luring (*offline*) |
+| **Theme** | [next-themes v0.4.6](https://github.com/pacocoursey/next-themes) | Pengalih tema Dark 🌙, Light ☀️, dan System 💻 bebas FOUC |
+| **ID Security** | [Sqids v0.3.0](https://sqids.org/) & Node.js Crypto | Penyamaran ID database dan enkripsi kriptografis autentikasi AES-256-GCM |
+| **Unit Testing** | [Vitest v5.0.5](https://vitest.dev/) | Framework testing cepat berbasis ESM untuk verifikasi logika dan utilitas |
+| **E2E Testing** | [Playwright v1.64.1](https://playwright.dev/) | Otomasi pengujian peramban lintas rute dan interaksi antarmuka |
+| **Linter** | [ESLint v9.39.5](https://eslint.org/) | Standar kualitas kode Next.js tanpa kompromi lint warning |
+| **Package Manager** | [Bun v1.4.2](https://bun.sh/) | Eksekusi cepat untuk manajemen paket, skrip, dan pengujian |
 
 ---
 
-## 📁 Struktur Folder Utama
+## 📁 Struktur Folder Proyek
 
 ```
-Init-nextjs-app/
-├── .github/workflows/         # Pipeline CI GitHub Actions (Lint & Build)
-├── src/                       # 📂 Semua Source Code Utama
-│   ├── app/                   # Next.js App Router
-│   │   ├── _components/       # Komponen UI App-wide (ThemeSwitcher, LanguageSwitcher)
-│   │   ├── demo-encryption/   # Halaman & Komponen Demo Keamanan ID
-│   │   │   ├── actions.ts     # Server Actions (use server)
-│   │   │   ├── DemoClient.tsx # Komponen Interaktif Klien
-│   │   │   └── page.tsx       # Halaman utama demo (Server Component)
-│   │   ├── favicon.ico
-│   │   ├── globals.css        # Pengaturan CSS & Tema Tailwind v4
-│   │   ├── layout.tsx         # Root Layout (ThemeProvider, Metadata SEO)
-│   │   ├── manifest.ts        # Web App Manifest PWA
-│   │   ├── page.tsx           # Halaman Utama (Homepage i18n)
-│   │   ├── providers.tsx      # Provider Wrapper (next-themes ThemeProvider)
-│   │   ├── robots.ts          # Generator robots.txt
-│   │   ├── sitemap.ts         # Generator sitemap.xml
-│   │   └── sw.ts              # Service Worker (Serwist)
-│   ├── dictionaries/          # Berkas Terjemahan Bahasa (JSON)
+muslim-pro/
+├── .github/workflows/         # Pipeline CI/CD GitHub Actions (Lint & Build)
+├── e2e/                       # 🧪 Skrip Pengujian End-to-End Playwright
+│   └── saku-muslim.spec.ts    # Suite pengujian 8 rute utama & interaktivitas
+├── public/                    # Aset statis, ikon PWA, manifest icons
+├── src/                       # 📂 Seluruh Kode Sumber Aplikasi
+│   ├── app/                   # Next.js App Router Routes
+│   │   ├── _components/       # Komponen Beranda (HomeHero, RamadhanTracker, Du'a Suite)
+│   │   ├── asmaul-husna/      # Halaman & Tampilan 99 Asmaul Husna
+│   │   ├── doa-dzikir/        # Halaman Kumpulan Doa & Tasbih Digital
+│   │   ├── jadwal-sholat/     # Halaman Jadwal Sholat & Waktu Imsakiyah
+│   │   ├── kalender-hijriah/  # Halaman Kalender Hijriah & Puasa Sunnah
+│   │   ├── kiblat/            # Halaman Kompas Arah Kiblat Interaktif
+│   │   ├── quran/             # Halaman Direktori Surah Al-Qur'an
+│   │   │   └── [id]/          # Halaman Pembaca Ayat Surah & Murottal Audio
+│   │   ├── zakat/             # Halaman Kalkulator Zakat Syariah
+│   │   ├── globals.css        # Konfigurasi Tailwind CSS v4 & Variabel Desain Token
+│   │   ├── layout.tsx         # Root Layout (ThemeProvider, BottomNav, Header, AudioPlayer)
+│   │   ├── manifest.ts        # PWA Web App Manifest Generator
+│   │   ├── page.tsx           # Halaman Beranda (Server Component + JSON-LD SEO)
+│   │   ├── providers.tsx      # Provider Klien (next-themes)
+│   │   ├── robots.ts          # Generator robots.txt SEO
+│   │   ├── sitemap.ts         # Generator sitemap.xml SEO
+│   │   └── sw.ts              # Service Worker PWA (Serwist)
+│   ├── components/            # Komponen Reusable Global
+│   │   ├── shared/            # Header, Footer, BottomNav, AudioPlayer, Ramadhan Ornaments
+│   │   └── ui/                # UI Primitives (Button, Card, Badge)
+│   ├── data/                  # Basis Data Lokal & Data Statis
+│   │   ├── asmaul-husna.ts    # 99 Nama Allah beserta arti & transliterasi
+│   │   ├── doa-dzikir.ts      # Kumpulan doa harian, dzikir, dan dalil
+│   │   ├── islamic-calendar.ts# Penanggalan Hijriah & daftar hari besar
+│   │   ├── prayer-data.ts     # Koordinat kota-kota di Indonesia
+│   │   ├── quran-surahs.ts    # Metadata 114 surah Al-Qur'an
+│   │   └── quran-verses.ts    # Teks ayat, terjemahan, dan audio surah terpilih
+│   ├── dictionaries/          # Berkas Terjemahan Bahasa (i18n)
 │   │   ├── id.json            # Bahasa Indonesia (Default)
 │   │   └── en.json            # Bahasa Inggris
-│   ├── i18n/                  # Konfigurasi i18n
-│   │   └── config.ts          # Config locale & tipe Locale
-│   ├── lib/                   # Utilitas Pendukung Server & Client
-│   │   ├── crypto.ts          # Enkripsi & Dekripsi AES-256-GCM (Server-Only)
-│   │   ├── dictionaries.ts    # Dictionary loader (Server-Only)
-│   │   ├── i18n-actions.ts    # Server Action pengubah cookie NEXT_LOCALE
-│   │   ├── i18n-server.ts     # Helper retrieval locale & dictionary (Server-Only)
-│   │   ├── obfuscator.ts      # Penyamaran & Pemulihan ID (Sqids)
-│   │   └── seo.ts             # Utilitas JSON-LD & SEO Metadata
-│   └── proxy.ts               # Proxy middleware ringan
-├── public/                    # Aset statis & Ikon PWA
-├── prompt_ai/                 # Prompt AI & panduan instruksi
-├── .env                       # Variabel environment umum
-├── .env.development           # Overrides dev lokal
-├── .env.production            # Overrides produksi (tanpa rahasia)
-├── .env.example               # Template referensi variabel environment
-├── AGENTS.md                  # Aturan khusus AI Agent (Next.js & Skills)
-├── GUIDELINE.md               # 📌 Panduan arsitektur & standar coding proyek
-├── next.config.ts             # Konfigurasi Next.js
+│   ├── i18n/                  # Konfigurasi Internationalization
+│   │   └── config.ts          # Locale list & TypeScript types
+│   ├── lib/                   # Utilitas, Modul Logika, & Perhitungan
+│   │   ├── crypto.ts          # Enkripsi & Dekripsi AES-256-GCM (server-only)
+│   │   ├── dictionaries.ts    # Pemuat berkas dictionary bahasa
+│   │   ├── i18n-actions.ts    # Server Action pengaturan cookie NEXT_LOCALE
+│   │   ├── i18n-server.ts     # Helper server-side untuk membaca locale & dictionary
+│   │   ├── obfuscator.ts      # Modul penyamaran ID (Sqids)
+│   │   ├── prayer-calculator.ts # Rumus hisab waktu sholat fardhu
+│   │   ├── ramadhan.ts        # Logika aktivasi dan status kalender Ramadhan
+│   │   ├── rate-limiter.ts    # In-memory sliding window rate limiter
+│   │   ├── security-guards.ts # Sanitasi input & pencegahan SSRF
+│   │   ├── seo.ts             # Metadata SEO & JSON-LD helper
+│   │   ├── zakat-calculator.ts# Rumus perhitungan nisab zakat profesi, maal, fitrah
+│   │   └── __tests__/         # Unit tests untuk utilitas dan keamanan
+│   └── proxy.ts               # Proxy middleware dengan security checks
+├── workflow/                  # 📋 Dokumentasi Pelaksanaan Tugas & Signoff SDLC
+├── playwright.config.ts       # Konfigurasi E2E Browser Testing
+├── vitest.config.mts          # Konfigurasi Unit Testing Vitest
+├── next.config.ts             # Konfigurasi Next.js 16
 ├── tsconfig.json              # Konfigurasi TypeScript Strict
-├── eslint.config.mjs          # Konfigurasi ESLint v9
 └── package.json               # Dependensi & skrip proyek
 ```
 
 ---
 
-## 🛠️ Panduan Pengembangan
+## 🚀 Panduan Memulai (Quick Start)
 
 ### Prasyarat
-Pastikan Anda telah memasang **Bun** (≥ 1.3) di sistem lokal Anda.
-
-### 1. Pemasangan Dependensi
-Pasang seluruh paket pustaka dengan cepat menggunakan Bun:
+Pastikan Anda telah memasang **Bun** (versi ≥ 1.3) pada komputer lokal Anda:
 ```bash
+# Cek versi Bun
+bun -v
+```
+
+### 1. Kloning & Pemasangan Dependensi
+```bash
+# Pasang seluruh dependensi proyek
 bun install
 ```
 
-### 2. Jalankan Mode Pengembangan
-Jalankan server lokal untuk melihat hasil perubahan secara langsung:
-```bash
-bun run dev
-```
-Buka [http://localhost:3000](http://localhost:3000) di peramban Anda.
-
-### 3. Pemeriksaan Linter (ESLint)
-Pastikan kode Anda bebas dari error linter sebelum melakukan komit:
-```bash
-bun run lint
-```
-
-### 4. Build untuk Produksi
-Verifikasi kelayakan kompilasi proyek Next.js Anda:
-```bash
-bun run build
-```
-
----
-
-## 🌐 Panduan Penggunaan i18n (Internationalization)
-
-Pengaturan bahasa menggunakan cookie `NEXT_LOCALE` tanpa mengubah URL path.
-
-### Di Server Component:
-```typescript
-import { getCurrentDictionary } from "@/lib/i18n-server";
-
-export default async function Page() {
-  const { locale, dict } = await getCurrentDictionary();
-
-  return <h1>{dict.home.title}</h1>;
-}
-```
-
-### Di Client Component:
-Gunakan komponen `LanguageSwitcher` dari `@/app/_components/language-switcher`:
-```tsx
-import { LanguageSwitcher } from "@/app/_components/language-switcher";
-
-export function Header() {
-  return <LanguageSwitcher />;
-}
-```
-
----
-
-## 🔒 Panduan Penggunaan ID Security Suite
-
-### 1. Penyamaran ID (Sqids)
-Cocok untuk mengubah angka ID database (seperti `10543`) menjadi hash string unik pendek seperti `o7vL39` untuk digunakan pada parameter URL tanpa menampilkan ID asli.
-
-```typescript
-import { obfuscateId, deobfuscateId } from "@/lib/obfuscator";
-
-// Proses menyamarkan ID
-const hash = obfuscateId(10543);
-console.log(hash); // Output: "o7vL39" (panjang minimal 6 karakter)
-
-// Proses mengembalikan ke ID asli
-const originalId = deobfuscateId("o7vL39");
-console.log(originalId); // Output: 10543
-```
-
-### 2. Enkripsi Kriptografis (AES-256-GCM)
-Enkripsi terautentikasi super aman untuk mengenkripsi string sensitif secara bolak-balik menggunakan algoritma AES-256-GCM. Fitur ini dilindungi dengan pustaka `"server-only"` sehingga kunci rahasia (`ENCRYPTION_KEY`) tidak akan pernah bocor ke sisi klien peramban.
-
-```typescript
-// PENTING: Hanya dapat dipanggil di Server Components, Server Actions, atau API Routes
-import { encrypt, decrypt } from "@/lib/crypto";
-
-// Proses Enkripsi
-const token = encrypt("user-1234-uuid-secret");
-console.log(token); // Output: Base64 URL-Safe String terenkripsi
-
-// Proses Dekripsi
-const plainText = decrypt(token);
-console.log(plainText); // Output: "user-1234-uuid-secret"
-```
-
-*Catatan: Jika token terenkripsi mengalami manipulasi karakter oleh peretas, proses dekripsi akan secara otomatis mendeteksi kegagalan otentikasi data dan mengembalikan nilai `null` secara aman untuk mencegah serangan injeksi.*
-
----
-
-## 🚀 Konfigurasi Environment Variables
-
-Template ini menggunakan sistem prioritas variabel lingkungan bawaan Next.js. Rahasia kriptografi diatur **tanpa** awalan `NEXT_PUBLIC_` untuk memastikan keamanan penuh di sisi server.
-
-Salin berkas template `.env.example` menjadi `.env.local` untuk konfigurasi lokal Anda:
+### 2. Konfigurasi Variabel Lingkungan (*Environment Variables*)
+Salin berkas `.env.example` menjadi `.env.local`:
 ```bash
 cp .env.example .env.local
 ```
+Sesuaikan variabel rahasia pada `.env.local`:
+- `ENCRYPTION_KEY`: Kunci rahasia berukuran **tepat 32 karakter** untuk modul AES-256-GCM.
+- `SQIDS_ALPHABET`: Deretan karakter acak unik untuk penyamaran ID database.
 
-### Variabel Utama:
-* `ENCRYPTION_KEY`: Kunci rahasia berukuran **tepat 32 karakter** (256-bit) yang digunakan oleh modul AES-GCM.
-* `SQIDS_ALPHABET`: Deretan karakter kustom yang digunakan oleh Sqids untuk mengacak hash URL yang dihasilkan.
+### 3. Menjalankan Server Pengembangan (*Development*)
+```bash
+bun run dev
+```
+Buka peramban Anda di [http://localhost:3000](http://localhost:3000).
+
+---
+
+## 🧪 Skrip Pengujian & Verifikasi Kualitas
+
+Repositori ini menerapkan standar kualitas tinggi tanpa toleransi terhadap peringatan/error:
+
+| Perintah | Deskripsi |
+|---|---|
+| `bun run lint` | Menjalankan pemeriksaan ESLint v9 pada seluruh berkas TypeScript/React. |
+| `bun run test` | Menjalankan seluruh pengujian unit menggunakan Vitest. |
+| `bun run test:e2e` | Menjalankan pengujian fungsional lintas peramban (*End-to-End*) dengan Playwright. |
+| `bun run build` | Melakukan kompilasi bundle produksi Next.js 16 beserta pembuatan service worker Serwist PWA. |
+| `bun start` | Menjalankan server aplikasi Next.js dalam mode produksi. |
+
+---
+
+## 🔧 Fitur Khusus & Parameter Pengujian
+
+### Pratinjau Nuansa Ramadhan (URL Parameter Testing)
+Fitur dan ornamen Ramadhan dapat diuji secara kondisional tanpa menunggu kalender Hijriah memasuki bulan Ramadhan:
+- **Paksa Tampilkan Ramadhan**: Buka `http://localhost:3000/?ramadhan=true`
+- **Paksa Sembunyikan Ramadhan**: Buka `http://localhost:3000/?ramadhan=false`
+- **Mode Normal (Otomatis)**: Buka `http://localhost:3000/` (mengikuti kalender astronomis aktual)
+
+### Progressive Web App (PWA) Offline
+Untuk menguji kapabilitas PWA dan caching offline:
+1. Jalankan `bun run build` untuk mengompilasi Service Worker Serwist (`public/sw.js`).
+2. Jalankan `bun start`.
+3. Buka peramban, buka DevTools > Network tab, pilih status **Offline**, dan muat ulang halaman. Aplikasi akan tetap terbuka dan beroperasi normal.
+
+### Pengamanan ID (ID Security Suite)
+- **Sqids (Penyamaran ID Database)**: Mengubah angka ID database (auto-increment integer) menjadi hash string alfanumerik yang ramah URL (contoh: `10543` &rarr; `o7vL39`).
+- **AES-256-GCM (Enkripsi Kriptografis)**: Enkripsi terautentikasi (*tamper-proof*) dua arah yang berjalan eksklusif di sisi server (`server-only`) untuk melindungi data string sensitif atau UUID transaksi.
+
+---
+
+## 🛡️ Kebijakan Kualitas & Standar Kode
+
+- **No Suppression Rules**: Dilarang menggunakan komentar penekan linter atau compiler seperti `@ts-ignore`, `eslint-disable`, atau sejenisnya. Semua tipe dan kode harus diselesaikan secara elegan dan tepat.
+- **Server Components by Default**: Komponen React dibuat sebagai Server Component secara default, dan directive `"use client"` hanya disematkan pada komponen yang membutuhkan hooks interaktivitas klien (state, effect, DOM listeners).
+- **Aksesibilitas (WCAG)**: Seluruh target sentuh tombol minimal 44x44 piksel (`min-h-[44px]`), modal dialog dilengkapi dengan label ARIA dan navigasi keyboard yang ramah pengguna.
+- **Mobile First Responsive**: Tampilan dioptimalkan untuk perangkat layar sentuh ponsel pintar, tablet, hingga monitor resolusi tinggi.
+
+---
+
+## 📄 Lisensi
+
+Proyek ini dilisensikan di bawah lisensi MIT. Silakan merujuk pada berkas [LICENSE](file:///d:/Project/muslim-pro/LICENSE) untuk ketentuan lebih lengkap.
