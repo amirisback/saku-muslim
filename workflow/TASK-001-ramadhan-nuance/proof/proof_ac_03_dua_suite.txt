@@ -1,0 +1,13 @@
+=== AC-03 AUDIT PROOF: RAMADHAN DU'A SUITE ===
+Target: `src/app/_components/ramadhan-dua-suite.tsx`
+Verified Criteria:
+1. Tab Switcher:
+   - Smooth toggle between "Niat Puasa Ramadhan" and "Doa Berbuka Puasa (Shahih)".
+2. Typography:
+   - Amiri font (`font-arabic`) with distinct harakat and proportional leading without glyph clipping.
+3. Content Fidelity:
+   - Complete Latin transliteration, Indonesian translation, and authentic hadith references (HR. Abu Dawud no. 2357).
+4. Audio & Copy Utilities:
+   - Integrated clipboard copy with visual checkmark/tooltip feedback ("Tersalin!").
+   - Integrated audio recitation trigger via `<AudioPlayer />` context without page reload.
+Result: PASS

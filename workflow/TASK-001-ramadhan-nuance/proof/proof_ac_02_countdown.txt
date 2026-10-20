@@ -1,0 +1,13 @@
+=== AC-02 AUDIT PROOF: DUAL COUNTDOWN IMSAK & MAGHRIB ===
+Target: `src/app/_components/home-hero.tsx` & `src/lib/prayer-calculator.ts`
+Verified Criteria:
+1. Calculation:
+   - Imsak calculated exactly 10 minutes before Subuh (Fajr) based on selected city coordinate hisab.
+2. Dual Spotlight Display:
+   - Side-by-side modules for Imsak (sahur deadline) and Maghrib (iftar break).
+3. Active Countdown:
+   - Second-by-second countdown with monospace bold digits (`HHj MMm SSd`).
+4. Smart Auto-Switch Target:
+   - Day state (Imsak -> Maghrib): Status "Sedang Berpuasa", countdown targets Maghrib.
+   - Night state (Maghrib -> Imsak): Status "Waktu Berbuka & Sahur", countdown targets Imsak.
+Result: PASS

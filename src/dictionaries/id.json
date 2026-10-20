@@ -1,6 +1,7 @@
 {
   "common": {
-    "appName": "Amir App",
+    "appName": "Saku Muslim",
+    "tagline": "Sahabat Ibadah Umat Muslim",
     "loading": "Memuat...",
     "error": "Terjadi kesalahan",
     "retry": "Coba Lagi",
@@ -15,14 +16,130 @@
     "yes": "Ya",
     "no": "Tidak",
     "or": "atau",
-    "and": "dan"
+    "and": "dan",
+    "copied": "Berhasil disalin!",
+    "copy": "Salin"
   },
   "nav": {
     "home": "Beranda",
-    "about": "Tentang",
-    "contact": "Kontak",
+    "prayer": "Jadwal Sholat",
+    "quran": "Al-Qur'an",
+    "qibla": "Arah Kiblat",
+    "dua": "Doa & Dzikir",
+    "names": "Asmaul Husna",
+    "zakat": "Kalkulator Zakat",
+    "calendar": "Kalender Hijriah",
     "menu": "Menu",
     "language": "Bahasa"
+  },
+  "prayer": {
+    "title": "Jadwal Sholat",
+    "subtitle": "Waktu sholat akurat sesuai lokasi Anda dengan metode hisab Kemenag RI",
+    "selectCity": "Pilih Kota",
+    "nextPrayer": "Sholat Berikutnya",
+    "timeRemaining": "Menuju",
+    "today": "Hari Ini",
+    "monthly": "Jadwal Bulanan",
+    "imsak": "Imsak",
+    "fajr": "Subuh",
+    "sunrise": "Terbit",
+    "dhuhr": "Dzuhur",
+    "asr": "Ashar",
+    "maghrib": "Maghrib",
+    "isha": "Isya",
+    "audioAdhan": "Dengarkan Adzan",
+    "tracker": "Pelacak Sholat Harian",
+    "trackerDesc": "Catat ibadah sholat 5 waktu Anda setiap hari",
+    "completed": "Selesai",
+    "notCompleted": "Belum"
+  },
+  "quran": {
+    "title": "Al-Qur'an Digital",
+    "subtitle": "114 Surah lengkap dengan teks Arab, transliterasi, terjemahan, dan lantunan qari",
+    "searchPlaceholder": "Cari surah (misal: Al-Fatihah, Yasin, Al-Kahf)...",
+    "all": "Semua Surah",
+    "makkiyah": "Makkiyah",
+    "madaniyah": "Madaniyah",
+    "surah": "Surah",
+    "verses": "Ayat",
+    "juz": "Juz",
+    "readSurah": "Baca Surah",
+    "listen": "Dengarkan",
+    "bismillah": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+    "bismillahMeaning": "Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang",
+    "lastRead": "Terakhir Dibaca",
+    "fontSize": "Ukuran Font Arab",
+    "showTranslation": "Tampilkan Terjemahan",
+    "showTransliteration": "Tampilkan Transliterasi",
+    "previousSurah": "Surah Sebelumnya",
+    "nextSurah": "Surah Berikutnya",
+    "playSurah": "Putar Audio Surah",
+    "pause": "Jeda"
+  },
+  "qibla": {
+    "title": "Kompas Arah Kiblat",
+    "subtitle": "Tentukan arah Ka'bah di Makkah secara akurat dari posisi Anda saat ini",
+    "degrees": "Derajat dari Utara",
+    "distanceToKaaba": "Jarak ke Ka'bah",
+    "calibratePrompt": "Pegang perangkat Anda secara horizontal dan kalibrasi dengan gerakan angka 8",
+    "currentLocation": "Lokasi Saat Ini",
+    "accuracy": "Akurasi Kompas",
+    "facingQibla": "Anda Menghadap Kiblat!"
+  },
+  "dua": {
+    "title": "Doa & Dzikir",
+    "subtitle": "Kumpulan doa harian Hisnul Muslim dan tasbih digital interaktif",
+    "searchPlaceholder": "Cari doa (misal: sholat, pagi, tidur, makan)...",
+    "tasbihTitle": "Tasbih Digital",
+    "tasbihSubtitle": "Hitung dzikir harian Anda dengan mudah",
+    "count": "Hitungan",
+    "target": "Target",
+    "tapToCount": "Tekan untuk Berdzikir",
+    "reset": "Mulai Ulang",
+    "allCategories": "Semua Kategori",
+    "daily": "Doa Harian",
+    "morningEvening": "Pagi & Petang",
+    "prayerRelated": "Seputar Sholat",
+    "travel": "Perjalanan",
+    "protection": "Perlindungan"
+  },
+  "names": {
+    "title": "99 Asmaul Husna",
+    "subtitle": "Nama-nama terindah Allah SWT beserta tulisan Arab, latin, dan artinya",
+    "searchPlaceholder": "Cari nama Allah (misal: Ar-Rahman, Al-Malik)...",
+    "detail": "Penjelasan & Fadhilah"
+  },
+  "zakat": {
+    "title": "Kalkulator Zakat",
+    "subtitle": "Hitung kewajiban zakat penghasilan, zakat maal, dan zakat fitrah dengan mudah",
+    "typeIncome": "Zakat Penghasilan",
+    "typeMaal": "Zakat Maal (Tabungan/Emas)",
+    "typeFitrah": "Zakat Fitrah",
+    "monthlyIncome": "Penghasilan Per Bulan (Rp)",
+    "otherIncome": "Penghasilan Tambahan / Bonus (Rp)",
+    "monthlyExpenses": "Kebutuhan Pokok Bulanan (Rp)",
+    "totalSavings": "Total Tabungan / Deposito (Rp)",
+    "goldValue": "Nilai Emas / Logam Mulia (Rp)",
+    "goldWeight": "Berat Emas yang Dimiliki (gram)",
+    "goldPricePerGram": "Harga Emas Saat Ini (Rp/gram)",
+    "nisabStandard": "Standar Nisab Emas (85 gram)",
+    "familyMembers": "Jumlah Anggota Keluarga (Jiwa)",
+    "ricePrice": "Harga Beras per Kg (Rp)",
+    "calculate": "Hitung Zakat",
+    "status": "Status Kewajiban",
+    "obligatory": "Wajib Membayar Zakat",
+    "notObligatory": "Belum Mencapai Nisab",
+    "amountToPay": "Jumlah Zakat yang Harus Ditunaikan"
+  },
+  "calendar": {
+    "title": "Kalender Hijriah",
+    "subtitle": "Kalender Islam penanggalan Hijriah, pengingat puasa sunnah, dan hari-hari besar Islam",
+    "sunnahFasting": "Jadwal Puasa Sunnah",
+    "mondayThursday": "Puasa Senin & Kamis",
+    "ayyamulBidh": "Puasa Ayyamul Bidh (13, 14, 15 Hijriah)",
+    "importantDates": "Hari Besar Islam",
+    "gregorianDate": "Tanggal Masehi",
+    "hijriDate": "Tanggal Hijriah"
   },
   "theme": {
     "label": "Tema",
@@ -30,49 +147,12 @@
     "dark": "Gelap",
     "system": "Sistem"
   },
-  "home": {
-    "title": "Selamat Datang",
-    "subtitle": "Untuk memulai, edit file page.tsx.",
-    "description": "Mencari titik awal atau instruksi lebih lanjut? Kunjungi",
-    "templates": "Template",
-    "learning": "Pusat Belajar",
-    "deployNow": "Deploy Sekarang",
-    "documentation": "Dokumentasi"
-  },
   "metadata": {
-    "title": "Amir App",
-    "description": "Amir App — Aplikasi Web Progressive"
-  },
-  "error": {
-    "notFound": "Halaman tidak ditemukan",
-    "notFoundDescription": "Maaf, halaman yang Anda cari tidak ada.",
-    "serverError": "Kesalahan Server",
-    "serverErrorDescription": "Terjadi kesalahan pada server. Silakan coba lagi nanti.",
-    "goHome": "Kembali ke Beranda"
+    "title": "Saku Muslim — Aplikasi Ibadah Umat Muslim Terlengkap",
+    "description": "Jadwal sholat akurat, Al-Qur'an 30 Juz dengan audio, arah kiblat, doa harian, 99 Asmaul Husna, kalkulator zakat, dan kalender hijriah."
   },
   "footer": {
-    "copyright": "© {year} Amir App. Semua hak dilindungi.",
-    "madeWith": "Dibuat dengan"
-  },
-  "demo": {
-    "title": "Enkripsi & Penyamaran ID",
-    "subtitle": "Keamanan tingkat tinggi & URL yang bersih untuk Next.js",
-    "intro": "Halaman ini menunjukkan implementasi dari dua teknik pengamanan ID yang telah diintegrasikan ke dalam template ini.",
-    "obfuscationTitle": "1. Penyamaran ID (Sqids)",
-    "obfuscationDesc": "Mengubah ID integer berurutan (misal dari database) menjadi string acak pendek dan ramah URL. Cocok untuk menyembunyikan ID agar tidak ditebak.",
-    "obfuscationPlaceholder": "Masukkan ID angka positif (misal: 12345)",
-    "obfuscateButton": "Samarkan ID",
-    "deobfuscateButton": "Kembalikan ID",
-    "encryptionTitle": "2. Enkripsi Kriptografis (AES-256-GCM)",
-    "encryptionDesc": "Enkripsi tingkat tinggi yang aman, terautentikasi (AES-GCM), dan anti-manipulasi. Hanya berjalan di sisi server (Server Component / Action).",
-    "encryptionPlaceholder": "Masukkan teks atau UUID sensitif",
-    "encryptButton": "Enkripsi Teks",
-    "decryptButton": "Dekripsi Teks",
-    "result": "Hasil",
-    "original": "Asli",
-    "processed": "Hasil Proses",
-    "errorInvalidNumber": "Silakan masukkan angka positif yang valid.",
-    "errorEmptyText": "Teks tidak boleh kosong.",
-    "success": "Sukses!"
+    "copyright": "© {year} Saku Muslim. Seluruh hak cipta dilindungi.",
+    "quote": "Sesungguhnya sholat itu adalah fardhu yang ditentukan waktunya atas orang-orang yang beriman. (QS. An-Nisa: 103)"
   }
 }

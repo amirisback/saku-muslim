@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { getCurrentLocale, getCurrentDictionary } from "@/lib/i18n-server";
 import { generatePageSeo, generateOrganizationJsonLd } from "@/lib/seo";
 import { ThemeProvider } from "./providers";
+import { Header } from "@/components/shared/header";
+import { Footer } from "@/components/shared/footer";
+import { BottomNav } from "@/components/shared/bottom-nav";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -38,8 +41,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+    { media: "(prefers-color-scheme: light)", color: "#059669" },
+    { media: "(prefers-color-scheme: dark)", color: "#090d16" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -52,6 +55,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const locale = await getCurrentLocale();
+  const { dict } = await getCurrentDictionary();
   const organizationJsonLd = generateOrganizationJsonLd();
 
   return (
@@ -69,14 +73,19 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-background text-foreground">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="flex min-h-screen flex-col">
+            <Header appName={dict.common.appName} />
+            <main className="flex-1 w-full">{children}</main>
+            <Footer />
+            <BottomNav />
+          </div>
         </ThemeProvider>
       </body>
     </html>

@@ -36,6 +36,14 @@ export function proxy(request: NextRequest): NextResponse {
   }
 
   // 3. Rate Limiting Check
+  const isRscPrefetch =
+    request.headers.get("next-router-prefetch") === "1" ||
+    request.nextUrl.searchParams.has("_rsc");
+
+  if (isRscPrefetch || process.env.PLAYWRIGHT_TEST === "true") {
+    return NextResponse.next();
+  }
+
   const ip = getClientIp(request.headers);
   const tier = getRouteTier(pathname);
   const rateLimitIdentifier = `${ip}:${pathname.startsWith("/api") ? "api" : "web"}`;

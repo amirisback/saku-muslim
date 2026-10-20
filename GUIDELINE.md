@@ -1,4 +1,4 @@
-# 📘 Project Guidelines — Amir App
+# 📘 Project Guidelines — Saku Muslim
 
 > **⚠️ MANDATORY: Semua AI Agent WAJIB membaca file ini sebelum menulis kode apapun.**
 
@@ -8,7 +8,7 @@
 
 | Key            | Value                                    |
 | -------------- | ---------------------------------------- |
-| **App Name**   | Amir App                                 |
+| **App Name**   | Saku Muslim                              |
 | **Framework**  | Next.js 16.3.6 (App Router)              |
 | **React**      | React 19.3.0                             |
 | **Language**   | TypeScript 6.0.3 (Strict Mode)           |
@@ -282,7 +282,7 @@ export default async function Page() {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Page Title — Amir App",
+  title: "Page Title — Saku Muslim",
   description: "Deskripsi halaman yang informatif",
 };
 ```

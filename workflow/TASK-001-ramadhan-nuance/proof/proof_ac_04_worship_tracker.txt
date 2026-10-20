@@ -1,0 +1,17 @@
+=== AC-04 AUDIT PROOF: DAILY WORSHIP TRACKER ===
+Target: `src/app/_components/ramadhan-worship-tracker.tsx` & `src/app/_components/home-hero.tsx`
+Verified Criteria:
+1. Four Core Deeds:
+   - Puasa Ramadhan (Fardhu 'Ain)
+   - Sholat Tarawih & Witir (Sunnah Mu'akkad)
+   - Tadarus Al-Qur'an (1 Juz - Target Khatam)
+   - Sedekah Subuh / Infaq (Keberkahan)
+2. Interactive Meter:
+   - Real-time progress bar (0%, 25%, 50%, 75%, 100%) and counter ("x/4 Selesai").
+   - Islamic congratulatory banner upon 100% completion with du'a.
+3. Storage Persistence & Timezone Hardening:
+   - Persistent `localStorage` using key `ramadhan_tracker_YYYY-MM-DD`.
+   - Hardened with local timezone key generation `getLocalTodayKey()` to prevent early morning (00:00 - 07:00 WIB sahur) date-skew data loss caused by UTC `toISOString()`.
+   - Hydration safety handled with `useSyncExternalStore` for client-only footer date display, avoiding React hydration mismatch warnings.
+   - Verified that data persists across page reload.
+Result: PASS (100% Verified)

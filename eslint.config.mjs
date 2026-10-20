@@ -17,6 +17,8 @@ const eslintConfig = defineConfig([
     "cli/**",
     ".agents/**",
     "prompt_ai/**",
+    "test-results/**",
+    "workflow/**",
   ]),
 ]);
 

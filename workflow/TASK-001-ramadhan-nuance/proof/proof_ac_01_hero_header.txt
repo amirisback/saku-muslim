@@ -1,0 +1,14 @@
+=== AC-01 AUDIT PROOF: THEMATIC HERO & HEADER ACCENT ===
+Target: "/" and navigation components
+Verified Components:
+1. `src/components/shared/ramadhan-ornaments.tsx`:
+   - FanousIcon (pure SVG hanging lantern with glowing candle flame)
+   - HilalStarIcon (crescent moon and 8-point Islamic star)
+   - ArabesquePattern (geometric watermark)
+   - RamadhanBadge ("Ramadhan Kareem 1448 H")
+2. `src/components/shared/header.tsx`:
+   - Desktop and mobile navigation includes animated Fanous icon & Ramadhan badge.
+3. `src/app/_components/home-hero.tsx`:
+   - Background gradient: Nocturnal Emerald (#022c22 / #064e3b) + Warm Gold / Amber.
+   - Smooth floating animation `animate-subtle-float` (CLS = 0).
+Result: PASS
