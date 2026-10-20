@@ -2,11 +2,11 @@
   "config": {
     "argv": [
       "C:\\Program Files\\nodejs\\node.exe",
-      "D:\\Project\\muslim-pro\\node_modules\\@playwright\\test\\cli.js",
+      "D:\\Project\\saku-muslim\\node_modules\\@playwright\\test\\cli.js",
       "test"
     ],
-    "configFile": "D:\\Project\\muslim-pro\\playwright.config.ts",
-    "rootDir": "D:/Project/muslim-pro/e2e",
+    "configFile": "D:\\Project\\saku-muslim\\playwright.config.ts",
+    "rootDir": "D:/Project/saku-muslim/e2e",
     "failOnFlakyTests": false,
     "forbidOnly": false,
     "fullyParallel": true,
@@ -22,7 +22,7 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "D:/Project/muslim-pro/test-results",
+        "outputDir": "D:/Project/saku-muslim/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -30,7 +30,7 @@
         },
         "id": "chromium",
         "name": "chromium",
-        "testDir": "D:/Project/muslim-pro/e2e",
+        "testDir": "D:/Project/saku-muslim/e2e",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -42,15 +42,15 @@
       {
         "grep": {},
         "grepInvert": null,
-        "outputDir": "D:\\Project\\muslim-pro\\test-results",
+        "outputDir": "D:\\Project\\saku-muslim\\test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
           "actualWorkers": 1
         },
         "name": "chromium",
-        "testDir": "D:\\Project\\muslim-pro\\e2e",
-        "snapshotDir": "D:\\Project\\muslim-pro\\e2e",
+        "testDir": "D:\\Project\\saku-muslim\\e2e",
+        "snapshotDir": "D:\\Project\\saku-muslim\\e2e",
         "testIgnore": [],
         "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
         "timeout": 30000,
@@ -112,6 +112,159 @@
   },
   "suites": [
     {
+      "title": "quran-nu-alignment-theme.spec.ts",
+      "file": "quran-nu-alignment-theme.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "TASK-003: Al-Qur'an NU Online Alignment & Theme Switcher E2E",
+          "file": "quran-nu-alignment-theme.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "AC-01: Directory tabs (Surah, Juz, Urutan Turun) and Sort toggle",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1828,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-20T17:39:07.188Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2e2b39075037eb558d5d-025e5e832e11c3c40a08",
+              "file": "quran-nu-alignment-theme.spec.ts",
+              "line": 4,
+              "column": 7
+            },
+            {
+              "title": "AC-02: Smart coordinate search (2:255) and Popular Surah pills",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1372,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-20T17:39:09.176Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2e2b39075037eb558d5d-ff0b7fe426aa974f84b1",
+              "file": "quran-nu-alignment-theme.spec.ts",
+              "line": 35,
+              "column": 7
+            },
+            {
+              "title": "AC-03 & AC-04: Reader Sticky Bar, full verses, and tafsir toggle",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1921,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-20T17:39:10.577Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2e2b39075037eb558d5d-7e3d813c709d723e4924",
+              "file": "quran-nu-alignment-theme.spec.ts",
+              "line": 53,
+              "column": 7
+            },
+            {
+              "title": "AC-05: Global Theme Switcher toggles dark and light mode",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1235,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-20T17:39:12.523Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2e2b39075037eb558d5d-10999b55ff2ed20d6e08",
+              "file": "quran-nu-alignment-theme.spec.ts",
+              "line": 80,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "saku-muslim.spec.ts",
       "file": "saku-muslim.spec.ts",
       "column": 0,
@@ -140,12 +293,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1109,
+                      "duration": 788,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-20T16:19:45.567Z",
+                      "startTime": "2026-10-20T17:39:13.789Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -174,12 +327,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 883,
+                      "duration": 777,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-20T16:19:46.905Z",
+                      "startTime": "2026-10-20T17:39:14.600Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -208,12 +361,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1378,
+                      "duration": 1060,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-20T16:19:47.824Z",
+                      "startTime": "2026-10-20T17:39:15.398Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -242,12 +395,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1141,
+                      "duration": 613,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-20T16:19:49.230Z",
+                      "startTime": "2026-10-20T17:39:16.480Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -276,12 +429,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1569,
+                      "duration": 1059,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-20T16:19:50.406Z",
+                      "startTime": "2026-10-20T17:39:17.117Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -310,12 +463,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1468,
+                      "duration": 843,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-20T16:19:52.011Z",
+                      "startTime": "2026-10-20T17:39:18.196Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -344,12 +497,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 998,
+                      "duration": 608,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-20T16:19:53.516Z",
+                      "startTime": "2026-10-20T17:39:19.061Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -378,12 +531,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 859,
+                      "duration": 563,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-20T16:19:54.546Z",
+                      "startTime": "2026-10-20T17:39:19.688Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -403,9 +556,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-20T16:19:42.122Z",
-    "duration": 14015.568000000001,
-    "expected": 8,
+    "startTime": "2026-10-20T17:39:05.609Z",
+    "duration": 15100.409000000001,
+    "expected": 12,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

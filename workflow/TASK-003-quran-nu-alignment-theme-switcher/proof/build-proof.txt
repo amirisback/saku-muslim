@@ -1,0 +1,41 @@
+$ next build --webpack
+▲ Next.js 16.3.6 (webpack)
+- Environments: .env
+✓ Running next.config.ts took 382ms
+
+  Creating an optimized production build ...
+✓ (serwist) Bundling the service worker script with the URL '/sw.js' and the scope '/'...
+✓ Compiled successfully in 2.4s
+  Running TypeScript ...
+  Finished TypeScript in 5.1s ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/14) ...
+  Generating static pages using 15 workers (3/14) 
+  Generating static pages using 15 workers (6/14) 
+  Generating static pages using 15 workers (10/14) 
+✓ Generating static pages using 15 workers (14/14) in 632ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ƒ /
+├ ƒ /_not-found
+├ ƒ /api/quran/[id]
+├ ƒ /asmaul-husna
+├ ƒ /doa-dzikir
+├ ƒ /jadwal-sholat
+├ ƒ /kalender-hijriah
+├ ƒ /kiblat
+├ ○ /manifest.webmanifest
+├ ƒ /quran
+├ ƒ /quran/[id]
+├ ○ /robots.txt
+├ ○ /sitemap.xml
+└ ƒ /zakat
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -1,4 +1,20 @@
+import { getRevelationOrderNumber, getSurahJuzInfo } from "./quran-juz";
+
 export interface SurahMeta {
+  number: number;
+  nameArabic: string;
+  nameLatin: string;
+  nameIndonesian: string;
+  numberOfAyahs: number;
+  revelationType: "Makkiyah" | "Madaniyah";
+  revelationOrder: number;
+  juzStart: number;
+  juzEnd: number;
+}
+
+export type SurahDirectoryItem = SurahMeta;
+
+interface RawSurahMeta {
   number: number;
   nameArabic: string;
   nameLatin: string;
@@ -7,7 +23,7 @@ export interface SurahMeta {
   revelationType: "Makkiyah" | "Madaniyah";
 }
 
-export const QURAN_SURAHS: SurahMeta[] = [
+const RAW_SURAHS: RawSurahMeta[] = [
   { number: 1, nameArabic: "الفاتحة", nameLatin: "Al-Fatihah", nameIndonesian: "Pembukaan", numberOfAyahs: 7, revelationType: "Makkiyah" },
   { number: 2, nameArabic: "البقرة", nameLatin: "Al-Baqarah", nameIndonesian: "Sapi Betina", numberOfAyahs: 286, revelationType: "Madaniyah" },
   { number: 3, nameArabic: "آل عمران", nameLatin: "Ali 'Imran", nameIndonesian: "Keluarga Imran", numberOfAyahs: 200, revelationType: "Madaniyah" },
@@ -123,3 +139,13 @@ export const QURAN_SURAHS: SurahMeta[] = [
   { number: 113, nameArabic: "الفلق", nameLatin: "Al-Falaq", nameIndonesian: "Waktu Subuh", numberOfAyahs: 5, revelationType: "Makkiyah" },
   { number: 114, nameArabic: "الناس", nameLatin: "An-Nas", nameIndonesian: "Manusia", numberOfAyahs: 6, revelationType: "Makkiyah" }
 ];
+
+export const QURAN_SURAHS: SurahMeta[] = RAW_SURAHS.map((surah) => {
+  const juzInfo = getSurahJuzInfo(surah.number);
+  return {
+    ...surah,
+    revelationOrder: getRevelationOrderNumber(surah.number),
+    juzStart: juzInfo.startJuz,
+    juzEnd: juzInfo.endJuz,
+  };
+});

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { FanousIcon } from "@/components/shared/ramadhan-ornaments";
 import { getRamadhanState } from "@/lib/ramadhan";
+import { ThemeSwitcher } from "@/app/_components/theme-switcher";
 
 export interface HeaderProps {
   appName?: string;
@@ -99,6 +100,11 @@ function HeaderContent({
 
         {/* Action Button & Mobile Burger */}
         <div className="flex items-center gap-2">
+          {/* Global Theme Switcher */}
+          <div className="hidden sm:flex items-center">
+            <ThemeSwitcher variant="desktop" />
+          </div>
+
           <Link
             href="/jadwal-sholat"
             className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/70 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 transition-colors"
@@ -169,6 +175,11 @@ function HeaderContent({
               );
             })}
           </nav>
+
+          {/* Mobile Theme Switcher */}
+          <div className="pt-3 border-t border-border mt-3">
+            <ThemeSwitcher variant="mobile" />
+          </div>
         </div>
       )}
     </header>

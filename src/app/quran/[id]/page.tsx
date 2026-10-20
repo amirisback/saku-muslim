@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getSurahDetail } from "@/data/quran-verses";
+import { getSurahDetailFull } from "@/lib/quran-service";
 import { QURAN_SURAHS } from "@/data/quran-surahs";
 import { SurahReader } from "./surah-reader";
 
@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `Surah ${meta.nameLatin} (${meta.nameArabic}) — Al-Qur'an Saku Muslim`,
-    description: `Baca Surah ${meta.nameLatin} (${meta.nameIndonesian}) lengkap ${meta.numberOfAyahs} ayat dengan teks Arab, latin, terjemahan Indonesia, dan audio murottal.`,
+    title: `Surah ${meta.nameLatin} (${meta.nameArabic}) — Al-Qur'an Digital Saku Muslim`,
+    description: `Baca Surah ${meta.nameLatin} (${meta.nameIndonesian}) lengkap ${meta.numberOfAyahs} ayat dengan teks Arab Uthmani, transliterasi latin, terjemahan resmi Kemenag RI, tafsir ringkas, dan audio murottal Syeikh Mishary Rashid Alafasy.`,
   };
 }
 
@@ -33,10 +33,10 @@ export default async function SurahPage({ params }: PageProps) {
     notFound();
   }
 
-  const surah = getSurahDetail(num);
+  const surah = await getSurahDetailFull(num);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
       <SurahReader surah={surah} />
     </div>
   );
